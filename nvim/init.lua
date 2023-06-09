@@ -1,22 +1,7 @@
-local o = vim.o
-local g = vim.g
-
 -- Set <space> as the leader key
-g.mapleader = ' '
-g.maplocalleader = ' '
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-o.ma = true
-o.mouse = 'a'
-o.cursorline = true
-o.tabstop = 4
-o.shiftwidth = 4
-o.softtabstop = 4
-o.expandtab = true
-o.autoindent = true
-o.smartindent = true
-o.number = true
-o.relativenumber = true
-o.foldlevelstart = 99
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -202,7 +187,9 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- NOTE: You should make sure your terminal supports this
+vim.o.number = true
+vim.o.relativenumber = true
+
 vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
@@ -269,7 +256,7 @@ require('nvim-treesitter.configs').setup {
   auto_install = false,
 
   highlight = { enable = true },
-  indent = { enable = true, disable = { 'python' } },
+  indent = { enable = true, disable = { 'python', 'c' } },
   incremental_selection = {
     enable = true,
     keymaps = {
